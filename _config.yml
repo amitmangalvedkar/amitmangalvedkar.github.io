@@ -35,7 +35,6 @@ roles:
 education:
  - level: Master of Technology (M.Tech.)
    date: 2001
-   subject: Artificial Intelligence and Computer Science
    school: IIT Bombay
 
 #List of interesting Github repo/projects to include - optional
