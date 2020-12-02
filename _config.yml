@@ -1,11 +1,44 @@
+# Site settings
 title: Amit M Mangalvedkar
-logo: "/images/logo.jpg?raw=true"
-description: > # your text below (remove <br> elements if you don't need line breaks)
-  First description
-  <br><br>
-  Second description
-  <br><br>
-  <a href="https://www.linkedin.com/in/amit-mangalvedkar/">View My LinkedIn Profile</a> 
+twitter_username: amitmangalvedka
+name: Amit M Mangalvedkar
 
-theme: jekyll-theme-minimal
-google_analytics: UA-000000-0 # your Google Analytics tracking ID here
+# Build settings
+markdown: kramdown
+
+#User specific content
+#Links that will appear in the navbar
+primarylinks:
+ - title: GitHub
+   url: https://github.com/amitmangalvedkar
+ - title: LinkedIn
+   url: https://www.linkedin.com/in/amit-mangalvedkar/
+
+#Any buzzword skills you want to include
+skills:
+ - Java
+ - Watson IoT Platform
+ - TRIRIGA Building Insights
+ - Docker
+ - API design
+ - ReST
+
+
+#Work experience is required
+roles:
+ - title: Senior Engineer
+   start: 2015
+   end: Ongoing
+   employer: IBM India
+
+#Education is required
+education:
+ - level: Master of Technology (M.Tech.)
+   date: 2001
+   subject: Artificial Intelligence and Computer Science
+   school: IIT Bombay
+
+#List of interesting Github repo/projects to include - optional
+github:
+ - amitmangalvedkar/amitmangalvedkar.github.io
+
