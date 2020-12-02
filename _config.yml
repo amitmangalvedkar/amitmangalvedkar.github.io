@@ -16,6 +16,10 @@ primarylinks:
 
 #Any buzzword skills you want to include
 skills:
+ - Internet of Things
+ - Machine to Machine
+ - Arduino 
+ - Raspberry Pi
  - Java
  - Watson IoT Platform
  - TRIRIGA Building Insights
