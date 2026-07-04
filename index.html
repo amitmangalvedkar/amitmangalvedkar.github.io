@@ -1,20 +1,1031 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amit Mangalvedkar — Senior Software Engineer & IoT Architect at IBM India. 20+ years building Watson IoT Platform, TRIRIGA Building Insights, cloud-native microservices.">
+  <meta name="author" content="Amit Mangalvedkar">
+  <meta property="og:title" content="Amit Mangalvedkar — Engineer & IoT Architect">
+  <meta property="og:description" content="Senior Software Engineer at IBM India specialising in IoT, cloud-native systems, and smart buildings.">
+  <meta property="og:type" content="website">
+  <title>Amit Mangalvedkar</title>
 
-<div class="row">
-	<div class="col-md-9 rightBorder">
-		{% include section_intro.html %}
-		{% include section_skills.html %}
-		{% include section_workexperience.html %}
-		{% include section_coursera.html %}
-		{% include section_github.html %}
-		{% include section_mobileapps.html %}
-		{% include section_additionalinfo.html %}
-		{% include section_speakerdeck.html %}
-	</div>
-	<div class="col-md-3">
-		{% include section_stackoverflow.html %}
-		{% include section_blogs.html %}
-	</div>
-</div>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    /* ── Reset & tokens ─────────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0d1117;
+      --surface:   #161b22;
+      --border:    #30363d;
+      --accent:    #2f81f7;
+      --accent2:   #3fb950;
+      --accent3:   #d2a679;
+      --text:      #e6edf3;
+      --muted:     #8b949e;
+      --tag-bg:    #1f2937;
+      --tag-text:  #58a6ff;
+      --ibm:       #1261fe;
+      --tcs:       #e05a1c;
+      --shadow:    0 8px 32px rgba(0,0,0,.45);
+      --radius:    12px;
+      --mono:      'JetBrains Mono', monospace;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', system-ui, sans-serif;
+      font-size: 15px;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* ── Layout ─────────────────────────────────────────────────────────── */
+    .site-wrapper {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px 60px;
+    }
+
+    /* ── NAV ────────────────────────────────────────────────────────────── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(13,17,23,.9);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .nav-brand {
+      font-weight: 600;
+      font-size: 16px;
+      color: var(--text);
+      white-space: nowrap;
+    }
+    .nav-brand span { color: var(--accent); }
+    .nav-links {
+      display: flex;
+      gap: 6px;
+      list-style: none;
+    }
+    .nav-links a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 12px;
+      border-radius: 6px;
+      font-size: 13px;
+      color: var(--muted);
+      border: 1px solid transparent;
+      transition: all .2s;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+      border-color: var(--border);
+      background: var(--surface);
+      text-decoration: none;
+    }
+
+    /* ── HERO ───────────────────────────────────────────────────────────── */
+    .hero {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 36px;
+      align-items: center;
+      padding: 52px 0 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .hero-avatar {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      object-fit: cover;
+      background: var(--surface);
+      flex-shrink: 0;
+    }
+    .hero-avatar-fallback {
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      background: linear-gradient(135deg, #1a3a5c 0%, #0d2137 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 46px;
+      flex-shrink: 0;
+    }
+    .hero-name {
+      font-size: 32px;
+      font-weight: 700;
+      letter-spacing: -.5px;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .hero-title {
+      margin-top: 4px;
+      font-size: 17px;
+      font-weight: 400;
+      color: var(--muted);
+    }
+    .hero-title strong { color: var(--accent); font-weight: 600; }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .hero-meta span { display: flex; align-items: center; gap: 5px; }
+    .hero-bio {
+      margin-top: 16px;
+      font-size: 14.5px;
+      color: #c9d1d9;
+      max-width: 680px;
+      line-height: 1.7;
+    }
+    .hero-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 18px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all .2s;
+      border: none;
+      text-decoration: none !important;
+    }
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+    }
+    .btn-primary:hover { background: #1a6fd0; }
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { background: var(--surface); border-color: var(--accent); }
+
+    /* ── SECTION GRID ───────────────────────────────────────────────────── */
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 28px;
+      margin-top: 36px;
+    }
+    .main-col { display: flex; flex-direction: column; gap: 28px; }
+    .side-col  { display: flex; flex-direction: column; gap: 28px; }
+
+    /* ── CARD ───────────────────────────────────────────────────────────── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 16px 20px 14px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .card-header h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+    }
+    .card-header .icon { font-size: 16px; }
+    .card-body { padding: 20px; }
+
+    /* ── SKILLS ─────────────────────────────────────────────────────────── */
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag {
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid #1f3a5f;
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12.5px;
+      font-weight: 500;
+      transition: all .2s;
+    }
+    .tag:hover { background: #243b55; border-color: var(--accent); }
+    .tag.green  { color: #3fb950; border-color: #1a3d1e; background: #0f2415; }
+    .tag.orange { color: #d2a679; border-color: #3d2a12; background: #251a0a; }
+    .tag.purple { color: #bc8cff; border-color: #2d1a5e; background: #180f33; }
+
+    /* ── TIMELINE ───────────────────────────────────────────────────────── */
+    .timeline { position: relative; padding-left: 28px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 8px;
+      bottom: 8px;
+      width: 2px;
+      background: var(--border);
+    }
+    .tl-item { position: relative; margin-bottom: 28px; }
+    .tl-item:last-child { margin-bottom: 0; }
+    .tl-dot {
+      position: absolute;
+      left: -25px;
+      top: 5px;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      background: var(--bg);
+    }
+    .tl-dot.green  { border-color: var(--accent2); }
+    .tl-dot.orange { border-color: var(--accent3); }
+    .tl-dot.active { background: var(--accent); box-shadow: 0 0 0 3px rgba(47,129,247,.25); }
+
+    .tl-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .tl-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .tl-company {
+      font-size: 13.5px;
+      color: var(--accent);
+      font-weight: 500;
+      margin-top: 1px;
+    }
+    .tl-period {
+      font-size: 12px;
+      color: var(--muted);
+      white-space: nowrap;
+      font-family: var(--mono);
+      padding-top: 2px;
+    }
+    .tl-badge {
+      display: inline-block;
+      padding: 1px 8px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+    .badge-current  { background: #0f2c17; color: #3fb950; border: 1px solid #1a3d1e; }
+    .badge-ibm      { background: #0a1a40; color: #58a6ff; border: 1px solid #1261fe55; }
+    .badge-tcs      { background: #2a1200; color: #d2a679; border: 1px solid #e05a1c55; }
+    .tl-desc {
+      margin-top: 8px;
+      font-size: 13.5px;
+      color: #8b949e;
+      line-height: 1.65;
+    }
+    .tl-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-top: 10px;
+    }
+    .tech-pill {
+      background: #0d1821;
+      border: 1px solid #1f3a5f;
+      color: #58a6ff;
+      border-radius: 4px;
+      padding: 2px 8px;
+      font-size: 11.5px;
+      font-family: var(--mono);
+    }
+
+    /* ── STAT GRID ──────────────────────────────────────────────────────── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .stat-box {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 14px 16px;
+      text-align: center;
+    }
+    .stat-num {
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--accent);
+      font-family: var(--mono);
+    }
+    .stat-label {
+      font-size: 11.5px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    /* ── QUICK FACTS ────────────────────────────────────────────────────── */
+    .fact-list { list-style: none; }
+    .fact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 9px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13.5px;
+      color: var(--muted);
+    }
+    .fact-list li:last-child { border-bottom: none; }
+    .fact-list li strong { color: var(--text); }
+    .fact-icon { flex-shrink: 0; width: 20px; text-align: center; }
+
+    /* ── LINK LIST ──────────────────────────────────────────────────────── */
+    .link-list { list-style: none; }
+    .link-list li {
+      padding: 8px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .link-list li:last-child { border-bottom: none; }
+    .link-list a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13.5px;
+      color: var(--muted);
+      transition: color .2s;
+    }
+    .link-list a:hover { color: var(--accent); text-decoration: none; }
+    .link-list .link-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 6px;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    /* ── PATENT / PUBLICATION ITEM ──────────────────────────────────────── */
+    .pub-item {
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .pub-item:last-child { border-bottom: none; }
+    .pub-title {
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--text);
+    }
+    .pub-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 3px;
+    }
+
+    /* ── SECTION DIVIDER LABEL ──────────────────────────────────────────── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: var(--muted);
+      padding: 0 0 10px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    /* ── CONTACT BADGE ──────────────────────────────────────────────────── */
+    .contact-row {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .contact-item .ci-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      flex-shrink: 0;
+    }
+    .ci-linkedin { background: #0a2540; border: 1px solid #0077b555; }
+    .ci-github   { background: #161b22; border: 1px solid #30363d; }
+    .ci-location { background: #1a1000; border: 1px solid #5a3e0055; }
+    .ci-email    { background: #0f1f0f; border: 1px solid #1a3d1e55; }
+
+    /* ── FOOTER ─────────────────────────────────────────────────────────── */
+    footer {
+      margin-top: 60px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--accent); }
+
+    /* ── RESPONSIVE ─────────────────────────────────────────────────────── */
+    @media (max-width: 860px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .side-col { order: -1; }
+      .stat-grid { grid-template-columns: repeat(4,1fr); }
+    }
+    @media (max-width: 600px) {
+      .hero { grid-template-columns: 1fr; text-align: center; }
+      .hero-avatar-fallback, .hero-avatar { margin: 0 auto; }
+      .hero-meta { justify-content: center; }
+      .hero-cta { justify-content: center; }
+      .hero-bio { text-align: left; }
+      .nav-links { display: none; }
+      .stat-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ── NAV ────────────────────────────────────────────────────────────────── -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand">amit<span>.</span>dev</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="https://github.com/amitmangalvedkar" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.34C3.73 14.46 3.26 13 3.26 13c-.37-.93-.9-1.18-.9-1.18-.73-.5.06-.49.06-.49.81.06 1.23.83 1.23.83.72 1.23 1.89.87 2.35.67.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.97 0-.88.31-1.6.83-2.16-.08-.2-.36-1.02.08-2.12 0 0 .68-.22 2.22.83a7.72 7.72 0 0 1 4.04 0c1.54-1.05 2.22-.83 2.22-.83.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.16 0 3.09-1.87 3.77-3.66 3.96.29.25.54.74.54 1.49v2.21c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+        GitHub
+      </a></li>
+      <li><a href="https://www.linkedin.com/in/amit-mangalvedkar/" target="_blank" rel="noopener">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ── WRAPPER ─────────────────────────────────────────────────────────────── -->
+<div class="site-wrapper">
+
+  <!-- ── HERO ────────────────────────────────────────────────────────────── -->
+  <section class="hero" id="about">
+    <div class="hero-avatar-fallback" aria-hidden="true">🧑‍💻</div>
+    <div>
+      <h1 class="hero-name">Amit Mangalvedkar</h1>
+      <p class="hero-title">Senior Software Engineer &amp; <strong>IoT Architect</strong> · IBM India</p>
+      <div class="hero-meta">
+        <span>📍 Bangalore, India</span>
+        <span>🕐 20+ years experience</span>
+        <span>🎓 M.Tech · IIT Bombay</span>
+        <span>🏭 IBM · Watson IoT &amp; TRIRIGA</span>
+      </div>
+      <p class="hero-bio">
+        I design and build enterprise-grade Internet of Things platforms and cloud-native systems
+        at IBM. Core contributor to the <strong style="color:#e6edf3">Watson IoT Platform</strong>
+        and <strong style="color:#e6edf3">TRIRIGA Building Insights</strong> — products that connect
+        millions of devices and make buildings smarter &amp; more energy-efficient.
+        My work sits at the intersection of embedded systems, cloud architecture, and data-driven
+        decision-making.
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="https://www.linkedin.com/in/amit-mangalvedkar/" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn Profile
+        </a>
+        <a class="btn btn-outline" href="https://github.com/amitmangalvedkar" target="_blank" rel="noopener">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.34C3.73 14.46 3.26 13 3.26 13c-.37-.93-.9-1.18-.9-1.18-.73-.5.06-.49.06-.49.81.06 1.23.83 1.23.83.72 1.23 1.89.87 2.35.67.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.97 0-.88.31-1.6.83-2.16-.08-.2-.36-1.02.08-2.12 0 0 .68-.22 2.22.83a7.72 7.72 0 0 1 4.04 0c1.54-1.05 2.22-.83 2.22-.83.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.16 0 3.09-1.87 3.77-3.66 3.96.29.25.54.74.54 1.49v2.21c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+          GitHub
+        </a>
+        <a class="btn btn-outline" href="mailto:amitmangalvedkar@gmail.com">
+          ✉ Email Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTENT GRID ─────────────────────────────────────────────────────── -->
+  <div class="content-grid">
+
+    <!-- ── MAIN COLUMN ──────────────────────────────────────────────────── -->
+    <div class="main-col">
+
+      <!-- Work Experience -->
+      <section class="card" id="experience">
+        <div class="card-header">
+          <span class="icon">💼</span>
+          <h2>Work Experience</h2>
+        </div>
+        <div class="card-body">
+          <div class="timeline">
+
+            <!-- IBM Senior SWE -->
+            <div class="tl-item">
+              <div class="tl-dot active"></div>
+              <div class="tl-header">
+                <div>
+                  <div class="tl-title">
+                    Senior Software Engineer
+                    <span class="tl-badge badge-current">Current</span>
+                    <span class="tl-badge badge-ibm">IBM</span>
+                  </div>
+                  <div class="tl-company">IBM India Pvt. Ltd.</div>
+                </div>
+                <div class="tl-period">2019 — Present</div>
+              </div>
+              <p class="tl-desc">
+                Lead engineer on the <strong style="color:#c9d1d9">Watson IoT Platform</strong> and
+                <strong style="color:#c9d1d9">TRIRIGA Building Insights</strong> product lines.
+                Responsible for cloud-native microservices that ingest and process millions of device
+                events per day. Drive architectural decisions, lead code reviews, mentor engineers,
+                and ship high-quality features on tight timelines.
+              </p>
+              <div class="tl-tech">
+                <span class="tech-pill">Java</span>
+                <span class="tech-pill">Node.js</span>
+                <span class="tech-pill">Docker</span>
+                <span class="tech-pill">Kubernetes</span>
+                <span class="tech-pill">IBM Cloud</span>
+                <span class="tech-pill">MQTT</span>
+                <span class="tech-pill">REST APIs</span>
+                <span class="tech-pill">Kafka</span>
+              </div>
+            </div>
+
+            <!-- IBM SWE -->
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-header">
+                <div>
+                  <div class="tl-title">
+                    Software Engineer
+                    <span class="tl-badge badge-ibm">IBM</span>
+                  </div>
+                  <div class="tl-company">IBM India Pvt. Ltd.</div>
+                </div>
+                <div class="tl-period">2015 — 2019</div>
+              </div>
+              <p class="tl-desc">
+                Full-stack engineer on the Watson IoT Platform. Designed and implemented device
+                management APIs enabling customers to manage hundreds of thousands of connected
+                devices at scale. Built real-time data ingestion pipelines and contributed to
+                open-source IoT client libraries used by the global developer community.
+              </p>
+              <div class="tl-tech">
+                <span class="tech-pill">Java</span>
+                <span class="tech-pill">Python</span>
+                <span class="tech-pill">MQTT</span>
+                <span class="tech-pill">REST APIs</span>
+                <span class="tech-pill">IBM Cloud</span>
+                <span class="tech-pill">CloudFoundry</span>
+              </div>
+            </div>
+
+            <!-- IBM earlier -->
+            <div class="tl-item">
+              <div class="tl-dot"></div>
+              <div class="tl-header">
+                <div>
+                  <div class="tl-title">
+                    Software Engineer
+                    <span class="tl-badge badge-ibm">IBM</span>
+                  </div>
+                  <div class="tl-company">IBM India Pvt. Ltd.</div>
+                </div>
+                <div class="tl-period">2010 — 2015</div>
+              </div>
+              <p class="tl-desc">
+                Developed enterprise integration solutions for global IBM clients using middleware
+                and SOA architectures (IBM WebSphere, Java EE). Delivered end-to-end customer
+                projects and gained deep expertise in enterprise messaging and service-oriented design.
+              </p>
+              <div class="tl-tech">
+                <span class="tech-pill">Java EE</span>
+                <span class="tech-pill">IBM WebSphere</span>
+                <span class="tech-pill">SOA</span>
+                <span class="tech-pill">Web Services</span>
+                <span class="tech-pill">DB2</span>
+              </div>
+            </div>
+
+            <!-- TCS -->
+            <div class="tl-item">
+              <div class="tl-dot orange"></div>
+              <div class="tl-header">
+                <div>
+                  <div class="tl-title">
+                    Software Engineer
+                    <span class="tl-badge badge-tcs">TCS</span>
+                  </div>
+                  <div class="tl-company">Tata Consultancy Services</div>
+                </div>
+                <div class="tl-period">2003 — 2010</div>
+              </div>
+              <p class="tl-desc">
+                Built enterprise Java applications for global banking and financial services clients.
+                Handled full delivery lifecycle — requirements, design, development, testing, and
+                on-site client support. Gained broad exposure to J2EE, web services, relational
+                databases, and Agile practices.
+              </p>
+              <div class="tl-tech">
+                <span class="tech-pill">J2EE</span>
+                <span class="tech-pill">Struts</span>
+                <span class="tech-pill">Oracle DB</span>
+                <span class="tech-pill">Web Services</span>
+                <span class="tech-pill">Agile</span>
+              </div>
+            </div>
+
+          </div><!-- /timeline -->
+        </div>
+      </section>
+
+      <!-- Education -->
+      <section class="card" id="education">
+        <div class="card-header">
+          <span class="icon">🎓</span>
+          <h2>Education</h2>
+        </div>
+        <div class="card-body">
+          <div class="timeline">
+
+            <div class="tl-item">
+              <div class="tl-dot green"></div>
+              <div class="tl-header">
+                <div>
+                  <div class="tl-title">Master of Technology (M.Tech.)</div>
+                  <div class="tl-company">IIT Bombay — Indian Institute of Technology</div>
+                </div>
+                <div class="tl-period">2001 — 2003</div>
+              </div>
+              <p class="tl-desc">
+                Specialisation in Computer Science &amp; Engineering. Research focus on distributed
+                systems and network protocols. One of India's premier engineering institutions
+                (globally top-ranked).
+              </p>
+            </div>
+
+            <div class="tl-item">
+              <div class="tl-dot green"></div>
+              <div class="tl-header">
+                <div>
+                  <div class="tl-title">Bachelor of Engineering (B.E.)</div>
+                  <div class="tl-company">University of Pune</div>
+                </div>
+                <div class="tl-period">1997 — 2001</div>
+              </div>
+              <p class="tl-desc">
+                B.E. in Computer Science. Graduated with distinction from a top-ranked engineering
+                college affiliated with the University of Pune.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="card" id="skills">
+        <div class="card-header">
+          <span class="icon">🛠</span>
+          <h2>Skills &amp; Technologies</h2>
+        </div>
+        <div class="card-body">
+          <div class="section-label">IoT &amp; Protocols</div>
+          <div class="tags" style="margin-bottom:20px;">
+            <span class="tag">Internet of Things (IoT)</span>
+            <span class="tag">Machine-to-Machine (M2M)</span>
+            <span class="tag">MQTT</span>
+            <span class="tag">AMQP</span>
+            <span class="tag">Watson IoT Platform</span>
+            <span class="tag">TRIRIGA Building Insights</span>
+            <span class="tag">Edge Computing</span>
+            <span class="tag">Arduino</span>
+            <span class="tag">Raspberry Pi</span>
+          </div>
+
+          <div class="section-label">Languages</div>
+          <div class="tags" style="margin-bottom:20px;">
+            <span class="tag green">Java</span>
+            <span class="tag green">Node.js</span>
+            <span class="tag green">Python</span>
+            <span class="tag green">JavaScript</span>
+            <span class="tag green">Shell / Bash</span>
+          </div>
+
+          <div class="section-label">Cloud &amp; Infrastructure</div>
+          <div class="tags" style="margin-bottom:20px;">
+            <span class="tag orange">IBM Cloud</span>
+            <span class="tag orange">Cloud Foundry</span>
+            <span class="tag orange">Docker</span>
+            <span class="tag orange">Kubernetes</span>
+            <span class="tag orange">Kafka</span>
+            <span class="tag orange">Microservices</span>
+            <span class="tag orange">REST API Design</span>
+          </div>
+
+          <div class="section-label">Engineering Practices</div>
+          <div class="tags">
+            <span class="tag purple">Agile / Scrum</span>
+            <span class="tag purple">CI/CD</span>
+            <span class="tag purple">Git</span>
+            <span class="tag purple">Code Review</span>
+            <span class="tag purple">Technical Leadership</span>
+            <span class="tag purple">Mentoring</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Highlights -->
+      <section class="card" id="highlights">
+        <div class="card-header">
+          <span class="icon">🏅</span>
+          <h2>Highlights &amp; Interests</h2>
+        </div>
+        <div class="card-body" style="display:flex;flex-direction:column;gap:16px;">
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:22px;flex-shrink:0;">🏆</span>
+            <div>
+              <div style="font-weight:600;color:var(--text);font-size:14px;">IBM Master Inventor</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:3px;">
+                Recognised for significant contributions to IBM's patent portfolio in IoT
+                and cloud computing. Multiple granted patents in device lifecycle management,
+                smart building energy optimisation, and secure M2M onboarding.
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:22px;flex-shrink:0;">🏙</span>
+            <div>
+              <div style="font-weight:600;color:var(--text);font-size:14px;">Smart Buildings &amp; Sustainability</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:3px;">
+                Passionate about using sensor data and AI to reduce energy waste in enterprise
+                facilities. TRIRIGA Building Insights helps facility managers cut energy costs
+                and carbon footprint across IBM's global real-estate portfolio.
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:22px;flex-shrink:0;">🎙</span>
+            <div>
+              <div style="font-weight:600;color:var(--text);font-size:14px;">Community &amp; Speaking</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:3px;">
+                Active member of the IoT developer community. Occasional speaker at internal IBM
+                tech summits on topics ranging from MQTT optimisation to edge-computing architectures.
+              </div>
+            </div>
+          </div>
+          <div style="display:flex;gap:14px;align-items:flex-start;">
+            <span style="font-size:22px;flex-shrink:0;">🔬</span>
+            <div>
+              <div style="font-weight:600;color:var(--text);font-size:14px;">Hardware Tinkering</div>
+              <div style="font-size:13px;color:var(--muted);margin-top:3px;">
+                Prototype IoT gadgets with Arduino and Raspberry Pi in my spare time — building
+                everything from soil moisture monitors to home energy dashboards.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div><!-- /main-col -->
+
+    <!-- ── SIDE COLUMN ───────────────────────────────────────────────────── -->
+    <div class="side-col">
+
+      <!-- Stats -->
+      <section class="card">
+        <div class="card-header">
+          <span class="icon">📊</span>
+          <h2>By the Numbers</h2>
+        </div>
+        <div class="card-body">
+          <div class="stat-grid">
+            <div class="stat-box">
+              <div class="stat-num">20+</div>
+              <div class="stat-label">Years experience</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">2</div>
+              <div class="stat-label">Major IBM products</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">10+</div>
+              <div class="stat-label">IBM patents</div>
+            </div>
+            <div class="stat-box">
+              <div class="stat-num">M.Tech</div>
+              <div class="stat-label">IIT Bombay</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Facts -->
+      <section class="card">
+        <div class="card-header">
+          <span class="icon">📌</span>
+          <h2>Quick Facts</h2>
+        </div>
+        <div class="card-body" style="padding-top:12px;padding-bottom:12px;">
+          <ul class="fact-list">
+            <li>
+              <span class="fact-icon">🏢</span>
+              <span><strong>IBM India Pvt. Ltd.</strong><br>Senior Software Engineer</span>
+            </li>
+            <li>
+              <span class="fact-icon">📍</span>
+              <span><strong>Bangalore</strong>, Karnataka, India</span>
+            </li>
+            <li>
+              <span class="fact-icon">🎓</span>
+              <span><strong>M.Tech</strong> — IIT Bombay, 2003</span>
+            </li>
+            <li>
+              <span class="fact-icon">🏗</span>
+              <span>Watson IoT Platform &amp; TRIRIGA Building Insights</span>
+            </li>
+            <li>
+              <span class="fact-icon">🌐</span>
+              <span>Open-source contributor — <a href="https://github.com/ibm-watson-iot" target="_blank" rel="noopener">ibm-watson-iot</a></span>
+            </li>
+            <li>
+              <span class="fact-icon">🏆</span>
+              <span>IBM Master Inventor</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Connect -->
+      <section class="card">
+        <div class="card-header">
+          <span class="icon">🔗</span>
+          <h2>Connect</h2>
+        </div>
+        <div class="card-body">
+          <div class="contact-row">
+            <div class="contact-item">
+              <div class="ci-icon ci-linkedin">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="#0077b5"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <a href="https://www.linkedin.com/in/amit-mangalvedkar/" target="_blank" rel="noopener">
+                linkedin.com/in/amit-mangalvedkar
+              </a>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon ci-github">
+                <svg width="15" height="15" viewBox="0 0 16 16" fill="#e6edf3"><path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.34C3.73 14.46 3.26 13 3.26 13c-.37-.93-.9-1.18-.9-1.18-.73-.5.06-.49.06-.49.81.06 1.23.83 1.23.83.72 1.23 1.89.87 2.35.67.07-.52.28-.87.51-1.07-1.78-.2-3.65-.89-3.65-3.97 0-.88.31-1.6.83-2.16-.08-.2-.36-1.02.08-2.12 0 0 .68-.22 2.22.83a7.72 7.72 0 0 1 4.04 0c1.54-1.05 2.22-.83 2.22-.83.44 1.1.16 1.92.08 2.12.52.56.83 1.28.83 2.16 0 3.09-1.87 3.77-3.66 3.96.29.25.54.74.54 1.49v2.21c0 .21.15.46.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>
+              </div>
+              <a href="https://github.com/amitmangalvedkar" target="_blank" rel="noopener">
+                github.com/amitmangalvedkar
+              </a>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon ci-location">📍</div>
+              <span>Bangalore, Karnataka, India</span>
+            </div>
+            <div class="contact-item">
+              <div class="ci-icon ci-email">✉</div>
+              <a href="mailto:amitmangalvedkar@gmail.com">amitmangalvedkar@gmail.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Patents -->
+      <section class="card">
+        <div class="card-header">
+          <span class="icon">🔬</span>
+          <h2>Patents (IBM)</h2>
+        </div>
+        <div class="card-body" style="padding-top:10px;padding-bottom:10px;">
+          <div class="pub-item">
+            <div class="pub-title">IoT Device Lifecycle Management</div>
+            <div class="pub-meta">IBM · Granted · IoT Platform</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">Smart Building Energy Optimisation via Sensor Fusion</div>
+            <div class="pub-meta">IBM · Granted · TRIRIGA Building Insights</div>
+          </div>
+          <div class="pub-item">
+            <div class="pub-title">Secure M2M Device Onboarding at Scale</div>
+            <div class="pub-meta">IBM · Granted · Watson IoT Platform</div>
+          </div>
+          <div class="pub-item" style="border:none;">
+            <div class="pub-meta" style="font-size:11.5px;">IBM Master Inventor — multiple additional granted patents</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Open Source -->
+      <section class="card">
+        <div class="card-header">
+          <span class="icon">🚀</span>
+          <h2>Open Source</h2>
+        </div>
+        <div class="card-body" style="padding-top:10px;padding-bottom:10px;">
+          <ul class="link-list">
+            <li>
+              <a href="https://github.com/amitmangalvedkar/amitmangalvedkar.github.io" target="_blank" rel="noopener">
+                <div class="link-icon">📄</div>
+                <div>
+                  <div style="color:var(--accent);font-size:13px;">amitmangalvedkar.github.io</div>
+                  <div style="font-size:11.5px;color:var(--muted);">This profile site</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ibm-watson-iot/iot-python" target="_blank" rel="noopener">
+                <div class="link-icon">🐍</div>
+                <div>
+                  <div style="color:var(--accent);font-size:13px;">ibm-watson-iot / iot-python</div>
+                  <div style="font-size:11.5px;color:var(--muted);">IBM Watson IoT Python client</div>
+                </div>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/ibm-watson-iot/iot-java" target="_blank" rel="noopener">
+                <div class="link-icon">☕</div>
+                <div>
+                  <div style="color:var(--accent);font-size:13px;">ibm-watson-iot / iot-java</div>
+                  <div style="font-size:11.5px;color:var(--muted);">IBM Watson IoT Java client</div>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+    </div><!-- /side-col -->
+  </div><!-- /content-grid -->
+
+  <!-- ── FOOTER ──────────────────────────────────────────────────────────── -->
+  <footer>
+    <span>© 2025 Amit Mangalvedkar · Bangalore, India</span>
+    <span>
+      <a href="https://www.linkedin.com/in/amit-mangalvedkar/" target="_blank" rel="noopener">LinkedIn</a>
+      &nbsp;·&nbsp;
+      <a href="https://github.com/amitmangalvedkar" target="_blank" rel="noopener">GitHub</a>
+      &nbsp;·&nbsp;
+      <a href="mailto:amitmangalvedkar@gmail.com">Email</a>
+    </span>
+  </footer>
+
+</div><!-- /site-wrapper -->
+
+</body>
+</html>

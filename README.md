@@ -1,26 +1,25 @@
-# NerdAbility - A CV Generator
-A Jekyll based CV page generator based on the user profile page on Nerdability.
+# amitmangalvedkar.github.io
 
-You can checkout the page generated for this repo here: https://robhinds.github.io
+Personal GitHub profile page for **Amit Mangalvedkar** — Senior Software Engineer & IoT Architect at IBM India.
 
-A few years agao I helped create a devloper CV webapp that let users sign up and connect lots of online footprints to make a dynamic online CV (formerly nerdability.com, now parked at: http://nerdability.github.io/ ), and I thought why not just create a static site generated version that re-created the user profile CV.  Luckily, GitHub provides native support for Jekyll sites as part of its user pages (https://{{yourusername}}.github.io), so as well as hosting the Jekyll project on GitHub, it also automatically builds and serves the site for you on a nice share-able URL.
+🔗 Live at: **https://amitmangalvedkar.github.io**
 
+## What's in here
 
-## Making your own CV
+A single-file, dependency-free `index.html` profile site. No build step, no framework, no Jekyll — just pure HTML5, CSS3, and a Google Fonts import. Open the file in any browser and it works.
 
-To make your own GitHub hosted CV:
+### Sections
+- **Hero** — name, title, bio, quick links
+- **Work Experience** — full career timeline (IBM 2019–present, IBM 2015–2019, IBM 2010–2015, TCS 2003–2010)
+- **Education** — M.Tech IIT Bombay · B.E. University of Pune
+- **Skills** — grouped by IoT, Languages, Cloud, and Engineering practices
+- **Highlights & Interests** — IBM Master Inventor, Smart Buildings, open source, hardware tinkering
+- **Sidebar** — stats, quick facts, connect links, IBM patents, open-source projects
 
-1. Fork this repo into your github account 
-2. Click the "Settings" button in your new forked repository (in the menu on the right), and change the repository's name to {{yourusername}}.github.io, replacing yourusername with your GitHub user name.
-3. Update /_config.yml with the details of your CV - the comments will explain what is required
-4. Visit https://{{yourusername}}.github.io to check it out
-5. Share your new CV/Profile with the world!
+## Editing
 
+All content lives in `index.html`. Search for a section heading (e.g. `Work Experience`) to jump straight to it.
 
-If you want to test it locally, install Ruby & Jekyll, clone the repository locally and run "jekyll serve" from the repo root directoy.
+## Deploying
 
-If you want to host the page on your own web hosting, you will need to run it locally and jekyll will build the site files to the /_site directory which you can then push to your hosting provider - See https://jekyllrb.com/ for details.
-
-
-
-
+GitHub Pages automatically serves the `index.html` at `https://amitmangalvedkar.github.io` when pushed to the `master` branch. No configuration needed.
