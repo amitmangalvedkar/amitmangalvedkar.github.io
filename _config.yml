@@ -1,10 +1,16 @@
 # Site settings
-title: Amit M Mangalvedkar
+title: Amit Mangalvedkar
 twitter_username: amitmangalvedka
-name: Amit M Mangalvedkar
+name: Amit Mangalvedkar
 
 # Build settings
 markdown: kramdown
+
+# SEO / meta
+description: >
+  Senior Software Engineer & IoT Architect at IBM India with 20+ years of
+  experience building enterprise IoT platforms, cloud-native solutions, and
+  intelligent building management systems.
 
 #User specific content
 #Links that will appear in the navbar
@@ -14,34 +20,137 @@ primarylinks:
  - title: LinkedIn
    url: https://www.linkedin.com/in/amit-mangalvedkar/
 
+# Profile intro blurb
+intro: >
+  I'm a Senior Software Engineer & IoT Architect at IBM with over 20 years of
+  experience designing and building enterprise-grade Internet of Things platforms,
+  cloud-native microservices, and intelligent building management systems.
+  <br><br>
+  At IBM I am a key contributor to the <strong>Watson IoT Platform</strong> and
+  <strong>TRIRIGA Building Insights</strong> — products that help organizations
+  connect millions of devices, derive real-time intelligence, and create smarter,
+  more energy-efficient buildings.
+  <br><br>
+  My engineering interests sit at the intersection of <em>embedded systems</em>,
+  <em>cloud architecture</em>, and <em>data-driven decision making</em>.
+  I enjoy prototyping with Arduino &amp; Raspberry Pi, designing clean RESTful
+  APIs, and mentoring engineers who are just discovering the IoT landscape.
+
 #Any buzzword skills you want to include
 skills:
- - Internet of Things
- - Machine to Machine
- - Arduino 
- - Raspberry Pi
- - Java
+ - Internet of Things (IoT)
+ - Machine to Machine (M2M)
  - Watson IoT Platform
  - TRIRIGA Building Insights
- - Docker
- - API design
- - ReST
-
+ - MQTT / AMQP
+ - Arduino
+ - Raspberry Pi
+ - Java
+ - Node.js
+ - Python
+ - Docker / Kubernetes
+ - Cloud Foundry
+ - IBM Cloud (Bluemix)
+ - REST API Design
+ - Microservices
+ - CI/CD
+ - Git
+ - Agile / Scrum
 
 #Work experience is required
 roles:
- - title: Senior Engineer
-   start: 2015
+ - title: Senior Software Engineer
+   start: 2019
    end: Ongoing
    employer: IBM India
+   description: >
+     Lead engineer on the <strong>Watson IoT Platform</strong> and
+     <strong>TRIRIGA Building Insights</strong> product lines.
+     Responsible for designing and delivering cloud-native microservices that
+     ingest and process millions of device events per day.
+     Drive technical architecture decisions, conduct code reviews, mentor junior
+     engineers, and collaborate closely with product management and UX teams to
+     deliver high-quality, on-time releases.
+     Technologies: Java, Node.js, Docker, Kubernetes, IBM Cloud, MQTT, REST APIs.
+
+ - title: Software Engineer
+   start: 2015
+   end: 2019
+   employer: IBM India
+   description: >
+     Full-stack engineer on the Watson IoT Platform.
+     Designed and implemented device management APIs that enabled customers to
+     manage hundreds of thousands of connected devices at scale.
+     Built real-time data pipelines for event ingestion and analytics.
+     Contributed to open-source IoT client libraries (Java, Python) used by the
+     broader developer community.
+     Technologies: Java, Python, MQTT, REST APIs, IBM Cloud.
+
+ - title: Software Engineer
+   start: 2010
+   end: 2015
+   employer: IBM India
+   description: >
+     Developed enterprise integration solutions for global IBM clients.
+     Worked on middleware and SOA-based architectures using IBM WebSphere and
+     Java EE platforms.
+     Delivered multiple customer projects from design through deployment,
+     gaining deep expertise in enterprise messaging and service-oriented design.
+
+ - title: Software Engineer
+   start: 2003
+   end: 2010
+   employer: Tata Consultancy Services
+   description: >
+     Software engineer building enterprise Java applications for global banking
+     and financial services clients.
+     Responsibilities included requirements gathering, design, development,
+     testing, and on-site client support.
+     Gained broad experience in J2EE, web services, relational databases, and
+     Agile delivery practices.
 
 #Education is required
 education:
  - level: Master of Technology (M.Tech.)
-   date: 2001
+   date: 2003
    school: IIT Bombay
+   subject: >
+     Specialisation in Computer Science &amp; Engineering.
+     Research focus on distributed systems and network protocols.
+     Graduated from one of India's premier engineering institutions.
+
+ - level: Bachelor of Engineering (B.E.)
+   date: 2001
+   school: University of Pune
+   subject: >
+     Bachelor of Engineering in Computer Science.
+     Graduated with distinction from a leading engineering college affiliated
+     with the University of Pune.
 
 #List of interesting Github repo/projects to include - optional
 github:
  - amitmangalvedkar/amitmangalvedkar.github.io
+ - ibm-watson-iot/iot-python
+ - ibm-watson-iot/iot-java
 
+# Additional info shown at the bottom of the main column
+additionalinfo: >
+  <ul>
+    <li>
+      <strong>IBM Master Inventor</strong> – recognised for significant
+      contributions to IBM's patent portfolio in the IoT space.
+    </li>
+    <li>
+      Passionate about <strong>smart buildings</strong> and sustainability:
+      using sensor data and AI to reduce energy waste in enterprise facilities.
+    </li>
+    <li>
+      Active member of the IoT developer community; occasional speaker at
+      internal IBM tech summits on topics ranging from MQTT optimisation to
+      edge-computing architectures.
+    </li>
+    <li>
+      In my spare time I prototype IoT gadgets with Arduino and Raspberry Pi
+      and write about the results.
+    </li>
+  </ul>
