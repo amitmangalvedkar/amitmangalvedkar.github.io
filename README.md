@@ -11,9 +11,9 @@ A single-file, dependency-free `index.html` profile site. No build step, no fram
 ### Sections
 - **Hero** — name, title, bio, quick links
 - **Work Experience** — full career timeline (IBM 2019–present, IBM 2015–2019, IBM 2010–2015, TCS 2003–2010)
-- **Education** — M.Tech IIT Bombay · B.E. University of Pune
+- **Education** — M.Tech IIT Bombay · B.E. University of Bombay
 - **Skills** — grouped by IoT, Languages, Cloud, and Engineering practices
-- **Highlights & Interests** — IBM Master Inventor, Smart Buildings, open source, hardware tinkering
+- **Highlights & Interests** — Inventor, Smart Buildings, open source, hardware tinkering
 - **Sidebar** — stats, quick facts, connect links, IBM patents, open-source projects
 
 ## Editing
