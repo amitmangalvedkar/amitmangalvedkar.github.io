@@ -406,19 +406,72 @@
 
     /* ── PATENT / PUBLICATION ITEM ──────────────────────────────────────── */
     .pub-item {
-      padding: 12px 0;
+      padding: 14px 0;
       border-bottom: 1px solid var(--border);
     }
     .pub-item:last-child { border-bottom: none; }
     .pub-title {
       font-size: 13.5px;
-      font-weight: 500;
+      font-weight: 600;
       color: var(--text);
+      line-height: 1.4;
     }
     .pub-meta {
       font-size: 12px;
       color: var(--muted);
-      margin-top: 3px;
+      margin-top: 4px;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+    .pub-number {
+      font-family: var(--mono);
+      font-size: 11px;
+      background: var(--tag-bg);
+      color: var(--tag-text);
+      border: 1px solid #1f3a5f;
+      border-radius: 4px;
+      padding: 1px 7px;
+    }
+    .pub-issued {
+      font-size: 11.5px;
+      color: var(--muted);
+    }
+    .pub-desc {
+      font-size: 12.5px;
+      color: #6e7681;
+      margin-top: 6px;
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .pub-link {
+      display: inline-block;
+      margin-top: 6px;
+      font-size: 11.5px;
+      color: var(--accent);
+    }
+    .pub-link:hover { text-decoration: underline; }
+    .pub-status-granted {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 20px;
+      background: #0f2c17;
+      color: #3fb950;
+      border: 1px solid #1a3d1e;
+    }
+    .pub-status-filed {
+      font-size: 10.5px;
+      font-weight: 600;
+      padding: 1px 7px;
+      border-radius: 20px;
+      background: #1a1200;
+      color: #d2a679;
+      border: 1px solid #3d2a1255;
     }
 
     /* ── SECTION DIVIDER LABEL ──────────────────────────────────────────── */
@@ -742,6 +795,148 @@
             </div>
 
           </div>
+        </div>
+      </section>
+
+      <!-- Patents & Inventions -->
+      <section class="card" id="patents">
+        <div class="card-header">
+          <span class="icon">🔬</span>
+          <h2>Patents &amp; Inventions</h2>
+        </div>
+        <div class="card-body" style="padding-top:8px;padding-bottom:8px;">
+
+          <div class="pub-item">
+            <div class="pub-title">Internet Of Things Device Provisioning</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">September 1, 2025</span>
+              <span class="pub-number">CN114510984B</span>
+            </div>
+            <p class="pub-desc">一种用于置备物联网(IoT)设备的计算机实现的方法包括在设备置备系统处接收IoT设备的事件模式。该方法还包括将来自事件模式的一个或多个事件类型与设备类型模式列表中的一个或多个事件类型的多个组合进行比较，以识别匹配；响应于识别出匹配，基于所述设备类型模式列表中针对所述设备类型的相关性来将所述设备类型分配给所述IoT设备；以及基于所分配的设备类型来向所述IoT设备置备所述经验证的凭证。</p>
+            <a class="pub-link" href="https://patents.google.com/patent/CN114510984B" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Internet Of Things Device Provisioning</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">January 13, 2025</span>
+              <span class="pub-number">JP7619736B2</span>
+            </div>
+            <p class="pub-desc">コンピュータ実装方法、デバイスプロビジョニングシステムおよびコンピュータプログラム（モノのインターネットデバイスのプロビジョニング）</p>
+            <a class="pub-link" href="https://patents.google.com/patent/JP7619736B2" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Shareable Transient IoT Gateways</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">May 6, 2024</span>
+              <span class="pub-number">US20200229272A1</span>
+            </div>
+            <p class="pub-desc">A system and method for a transient gateway configured to share bandwidth and resources across a plurality of organizations. The transient gateway organizes data to act as a broker amongst the plurality of organizations and is configured to provide resources as a monetized commodity.</p>
+            <a class="pub-link" href="https://patents.google.com/patent/US20200229272A1" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Internet of Things Device Provisioning</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">February 14, 2023</span>
+              <span class="pub-number">GB2603240B</span>
+            </div>
+            <a class="pub-link" href="https://patents.google.com/patent/GB2603240B" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Automated IoT Device Registration</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">June 7, 2022</span>
+              <span class="pub-number">US20200177589A1</span>
+            </div>
+            <p class="pub-desc">Automated registration of IoT devices seeking connection to IoT platforms using a secure provisioning service. The service verifies and administers connection credentials to each IoT device, ensuring legitimate devices cannot be impersonated or controlled by unauthorized personnel.</p>
+            <a class="pub-link" href="https://patents.google.com/patent/US20200177589A1" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Auto Generating Reasoning Query on a Knowledge Graph</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">January 18, 2022</span>
+              <span class="pub-number">US11227018B2</span>
+            </div>
+            <p class="pub-desc">A method for generating a reasoning query based on a user selection of a generated data visualization of a knowledge graph. Includes constructing a hierarchy of the knowledge graph and generating a data visualization of the domain based on that hierarchy.</p>
+            <a class="pub-link" href="https://patents.google.com/patent/US11227018B2" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">System and Method for Attribute Based Device and Service Discovery</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">February 9, 2021</span>
+              <span class="pub-number">US10917479</span>
+            </div>
+            <p class="pub-desc">A method for receiving a request for a device or service based on an attribute in a distributed architecture, forwarding a query to a plurality of nodes, and determining a probability of nodes to resolve the query.</p>
+            <a class="pub-link" href="https://patents.google.com/patent/US10917479" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Synchronization of Home Shopping Carts with Advertisements</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">April 24, 2018</span>
+              <span class="pub-number">US9953346</span>
+            </div>
+            <p class="pub-desc">Advertisement content is received from an advertising distribution device within a home network. A determination is made to add an advertised item to a spoke shopping cart based upon commodity data of a smart home appliance's managed inventory.</p>
+            <a class="pub-link" href="https://patents.google.com/patent/US9953346" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Representing a Machine-to-Machine Device Model Based on Ontological Relationships</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">June 20, 2017</span>
+              <span class="pub-number">US9684708B2</span>
+            </div>
+            <p class="pub-desc">An approach for creating a machine-to-machine device model based on ontological relationships. Determines characteristics of M2M devices and ontological relationships between them, enabling structured device modelling.</p>
+            <a class="pub-link" href="https://patents.google.com/patent/US9684708B2" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Representing a Machine-to-Machine Device Model Based on Ontological Relationships</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">June 6, 2017</span>
+              <span class="pub-number">US20150242491</span>
+            </div>
+            <p class="pub-desc">An approach for creating a machine-to-machine device model based on ontological relationships — determines characteristics and ontological relationships between M2M devices and their characteristics.</p>
+            <a class="pub-link" href="https://patents.google.com/patent/US20150242491" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Providing Restricted Access to Given Devices by Constructing Abstract Devices</div>
+            <div class="pub-meta">
+              <span class="pub-status-granted">Granted</span>
+              <span class="pub-issued">December 6, 2016</span>
+              <span class="pub-number">US9516033B2</span>
+            </div>
+            <p class="pub-desc">Generates a virtual device based on one or more physical devices and maps device actions of the physical devices to the virtual device. Incorporates discretionary access control, policy-based access control, and additional techniques.</p>
+            <a class="pub-link" href="https://patents.google.com/patent/US9516033B2" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-title">Provide an Internet of Things Device</div>
+            <div class="pub-meta">
+              <span class="pub-status-filed">Filed</span>
+              <span class="pub-issued">September 13, 2021</span>
+              <span class="pub-number">DE102021123575A1</span>
+            </div>
+            <p class="pub-desc">Ein durch einen Computer umgesetztes Verfahren zum Bereitstellen einer Internet-of-Things-(IoT) Einheit — empfängt ein Ereignisschema für die IoT-Einheit und vergleicht Ereignistypen mit einer Einheitentyp-Schemaliste, um eine Übereinstimmung zu identifizieren.</p>
+            <a class="pub-link" href="https://patents.google.com/patent/DE102021123575A1" target="_blank" rel="noopener">See patent →</a>
+          </div>
+
         </div>
       </section>
 
