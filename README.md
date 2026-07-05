@@ -1,6 +1,6 @@
 # amitmangalvedkar.github.io
 
-Personal GitHub profile page for **Amit Mangalvedkar** — Senior Software Engineer & IoT Architect at IBM India.
+Personal GitHub profile page for **Amit Mangalvedkar** — Senior Development Manager at IBM India.
 
 🔗 Live at: **https://amitmangalvedkar.github.io**
 
